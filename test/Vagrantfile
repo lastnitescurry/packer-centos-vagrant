@@ -1,0 +1,35 @@
+nodes = [  
+  { :gport => '8080', :hport => '8080',  :hostname => 'database',  :ip => '192.168.100.10', :box => 'lastnitescurry/centos73', :ram => '2048', :cpus => '1', :desc => 'Centos 7.3 - Post Packer tester'},
+#  { :gport => '8080', :hport => '8081',  :hostname => 'appsservr', :ip => '192.168.100.20', :box => 'nrel/CentOS-6.7-x86_64', :ram => '2048', :cpus => '1', :desc => 'Centos 6.7 - Application Server'},
+#  { :gport => '8080', :hport => '8082',  :hostname => 'jenkins',   :ip => '192.168.100.21', :box => 'nrel/CentOS-6.7-x86_64', :ram => '2048', :cpus => '1', :desc => 'Centos 6.7 - Jenkins Server'},
+]
+
+Vagrant.configure("2") do |config|
+
+  nodes.each do |node|
+    config.vm.define node[:hostname] do |nodeconfig|
+      nodeconfig.vm.box = node[:box]
+      nodeconfig.vm.hostname = node[:hostname]
+      nodeconfig.vm.network :private_network, ip: node[:ip]
+      nodeconfig.vm.network :forwarded_port,  guest: node[:gport],  host: node[:hport]
+
+      memory = node[:ram] ? node[:ram] : 512;
+      cpus = node[:cpus] ? node[:cpus] : 1;
+      desc = node[:desc] ? node[:desc] : "Please tell me what I am to be";
+
+      nodeconfig.vm.provider :virtualbox do |vb|
+        vb.customize [
+          "modifyvm",      :id,
+          "--cpus",        cpus.to_s,
+          "--memory",      memory.to_s,
+          "--name",        node[:hostname].to_s,
+          "--description", desc.to_s,
+          "--vram",        "256",
+        ]
+      end
+    end
+  end
+
+  config.vm.synced_folder("C:/Software", "/software", :mount_options => ["dmode=777","fmode=666"])
+
+end
