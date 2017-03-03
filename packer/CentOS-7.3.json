@@ -53,6 +53,7 @@
       "scripts": [
         "scripts73/base.sh",
         "scripts73/puppet.sh",
+        "scripts73/docker.sh",
         "scripts73/vagrant.sh",
         "scripts73/virtualbox.sh",
         "scripts73/cleanup.sh",
