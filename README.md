@@ -1,5 +1,9 @@
 # packer-centos-vagrant
-Generate CentOS images with latest updates and tools (puppet, docker, ...) I need
+Generate CentOS images with latest updates and tools (puppet, docker, ansible...) I am intersted in.
+
+Yes there are many fine pre configured boxes, but 
+# I am curious
+# I dislike the repeated downloads of updates for each vm...
 
 Previously I used NREL CentOS 6 boxes, but they have not done a CentOS 7 box.
 This is my version of a CentOS 7 box
@@ -9,7 +13,7 @@ This is my version of a CentOS 7 box
     pushd packer
     rmdir /s /q packer_cache
     rmdir /s /q builds
-    packer build CentOS-7.3.json
+    packer build CentOS-7.json
 
 ## References
 ### Packer and Vagrant
@@ -19,8 +23,9 @@ This is my version of a CentOS 7 box
 - https://github.com/geerlingguy/packer-centos-7
 - https://github.com/hfm/packer-centos-7
 - https://github.com/search?utf8=%E2%9C%93&q=packer-centos-7
-- http://digitalsandwich.com/packer-built-centos-vagrant-base-box-automated-build/
-- http://softwaretester.info/create-simple-centos-7-virtualbox-with-packer/
+- http://digitalsandwich.com/packer-built-centos-vagrant-base-box-automated-build
+- http://softwaretester.info/create-simple-centos-7-virtualbox-with-packer
+- http://mikestechblog.com/ubuntu-antenna/scp-ambiguous-target-error-solved
 
 ### RHEL
 

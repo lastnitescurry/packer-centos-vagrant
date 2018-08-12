@@ -1,11 +1,11 @@
 # Testing Packer Box
 ### Install Box to Local Vagrant Cache
 
-    vagrant box add lastnitescurry/centos73 file://../packer/builds/virtualbox-centos7.box
+    vagrant box add lastnitescurry/centos7 file://../packer/builds/virtualbox-centos7.box
 
 ### Remove Box from Local Vagrant Cache
 
-    vagrant box remove lastnitescurry/centos73
+    vagrant box remove lastnitescurry/centos7
 
 ### Run
 
