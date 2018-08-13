@@ -10,7 +10,7 @@
       "disk_size": 204800,
       "guest_os_type": "RedHat_64",
       "headless": true,
-      "http_directory": "http7",
+      "http_directory": "http",
       "iso_urls": [
         "file:///D:/Software/Centos/CentOS-7-x86_64-Minimal-1804.iso",
         "http://ftp.heanet.ie/pub/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso",
@@ -23,7 +23,6 @@
       "ssh_port": 22,
       "ssh_wait_timeout": "90m",
       "shutdown_command": "sudo /sbin/halt -p",
-      "guest_additions_path": "file:///C:/Program\\Files/Oracle/VirtualBox/VBoxGuestAdditions.iso",
       "virtualbox_version_file": ".vbox_version",
       "vm_name": "packer-centos-7-x86_64",
       "vboxmanage": [
@@ -38,12 +37,6 @@
           "{{.Name}}",
           "--cpus",
           "2"
-        ],
-        [
-          "modifyvm",
-          "{{.Name}}",
-          "--vram",
-          "128"
         ]
       ]
     }
@@ -52,12 +45,13 @@
     {
       "type": "shell",
       "scripts": [
-        "scripts73/base.sh",
-        "scripts73/vagrant.sh",
-        "scripts73/virtualbox.sh",
-        "scripts73/cleanup.sh",
-        "scripts73/info.sh",
-        "scripts73/zerodisk.sh"
+        "scripts/base.sh",
+        "scripts/vagrant.sh",
+        "scripts/virtualbox.sh",
+        "scripts/ansible.sh",
+        "scripts/cleanup.sh",
+        "scripts/info.sh",
+        "scripts/zerodisk.sh"
       ]
     }
   ],

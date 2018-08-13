@@ -13,6 +13,8 @@ This is my version of a CentOS 7 box
     pushd packer
     rmdir /s /q packer_cache
     rmdir /s /q builds
+    set PACKER_LOG=1
+    set PACKER_LOG_PATH=packerlog.txt
     packer build CentOS-7.json
 
 ## References
@@ -26,6 +28,11 @@ This is my version of a CentOS 7 box
 - http://digitalsandwich.com/packer-built-centos-vagrant-base-box-automated-build
 - http://softwaretester.info/create-simple-centos-7-virtualbox-with-packer
 - http://mikestechblog.com/ubuntu-antenna/scp-ambiguous-target-error-solved
+- https://www.packer.io/docs/other/environment-variables.html
+
+### Ansible
+
+- https://github.com/geerlingguy/packer-centos-7
 
 ### RHEL
 
