@@ -2,8 +2,8 @@
 Generate CentOS images with latest updates and tools (puppet, docker, ansible...) I am intersted in.
 
 Yes there are many fine pre configured boxes, but 
-# I am curious
-# I dislike the repeated downloads of updates for each vm...
+- I am curious
+- I dislike the repeated downloads of updates for each vm...
 
 Previously I used NREL CentOS 6 boxes, but they have not done a CentOS 7 box.
 This is my version of a CentOS 7 box
