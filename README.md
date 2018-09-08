@@ -15,7 +15,7 @@ This is my version of a CentOS 7 box
     rmdir /s /q builds
     set PACKER_LOG=1
     set PACKER_LOG_PATH=packerlog.txt
-    packer build CentOS-7.json
+    packer build CentOS7.json
 
 ## References
 ### Packer and Vagrant
