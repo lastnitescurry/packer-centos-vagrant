@@ -1,9 +1,11 @@
 {
-  "builders": [
+  "builders": 
+  [
     {
       "name": "CentOS-7-x86_64",
       "type": "virtualbox-iso",
-      "boot_command": [
+      "boot_command": 
+      [
         "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg<enter><wait>"
       ],
       "boot_wait": "10s",
@@ -11,7 +13,8 @@
       "guest_os_type": "RedHat_64",
       "headless": true,
       "http_directory": "http",
-      "iso_urls": [
+      "iso_urls": 
+      [
         "file:///D:/Software/Centos/CentOS-7-x86_64-Minimal-1804.iso",
         "http://ftp.heanet.ie/pub/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso",
         "http://mirror.strencom.net/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso"
@@ -26,7 +29,8 @@
       "shutdown_timeout": "5m",
       "virtualbox_version_file": ".vbox_version",
       "vm_name": "packer-centos-7-x86_64",
-      "vboxmanage": [
+      "vboxmanage": 
+      [
         [
           "modifyvm",
           "{{.Name}}",
@@ -42,7 +46,13 @@
       ]
     }
   ],
-  "provisioners": [
+  "provisioners": 
+  [
+    {
+      "type": "file",
+      "source": "./files/time_prompt.sh",
+      "destination": "/etc/profile.d/time_prompt.sh"
+    },
     {
       "type": "shell",
       "scripts": [
@@ -51,13 +61,16 @@
         "scripts/virtualbox.sh",
         "scripts/ansible.sh",
         "scripts/oracle12c.sh",        
+        "scripts/documentum.sh",
+        "scripts/configureTimePrompt.sh",
         "scripts/cleanup.sh",
         "scripts/info.sh",
         "scripts/zerodisk.sh"
       ]
     }
   ],
-  "post-processors": [
+  "post-processors": 
+  [
     {
       "output": "builds/{{.Provider}}-centos7.box",
       "type": "vagrant"
