@@ -49,11 +49,6 @@
   "provisioners": 
   [
     {
-      "type": "file",
-      "source": "./files/time_prompt.sh",
-      "destination": "/etc/profile.d/time_prompt.sh"
-    },
-    {
       "type": "shell",
       "scripts": [
         "scripts/base.sh",
@@ -62,10 +57,20 @@
         "scripts/ansible.sh",
         "scripts/oracle12c.sh",        
         "scripts/documentum.sh",
-        "scripts/configureTimePrompt.sh",
         "scripts/cleanup.sh",
         "scripts/info.sh",
         "scripts/zerodisk.sh"
+      ]
+    },
+    {
+      "type": "file",
+      "source": "./files/time_prompt.sh",
+      "destination": "/etc/profile.d/time_prompt.sh"
+    },
+    {
+      "type": "shell",
+      "scripts": [
+        "scripts/configureTimePrompt.sh"
       ]
     }
   ],

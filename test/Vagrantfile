@@ -1,5 +1,5 @@
 nodes = [  
-  { :gport => '8080', :hport => '8080',  :hostname => 'database',  :ip => '192.168.100.10', :box => 'file://../packer/builds/virtualbox-centos7.box', :ram => '1024', :cpus => '1', :desc => 'Centos 7.3 - Post Packer tester'},
+  { :gport => '8080', :hport => '8080',  :hostname => 'test1',  :ip => '192.168.100.10', :box => 'file://../packer/builds/virtualbox-centos7.box', :ram => '1024', :cpus => '1', :desc => 'Centos 7.3 - Post Packer tester'},
 #  { :gport => '8080', :hport => '8081',  :hostname => 'appsservr', :ip => '192.168.100.20', :box => 'lastnitescurry/centos7', :ram => '2048', :cpus => '2', :desc => 'Centos 7.3 - linked clone 2'},
 #  { :gport => '8080', :hport => '8082',  :hostname => 'jenkins',   :ip => '192.168.100.21', :box => 'lastnitescurry/centos7', :ram => '4096', :cpus => '4', :desc => 'Centos 7.3 - linked clone 3'},
 ]
