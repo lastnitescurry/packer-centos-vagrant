@@ -38,3 +38,6 @@ This is my version of a CentOS 7 box
 
 - https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/sect-kickstart-syntax.html
 - https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/System_Administrators_Guide/s1-Changing_the_Keyboard_Layout.html#s2-Listing_Available_Keymaps
+
+### Centos 7.1810 (7.6?) Release
+- https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7.1810
