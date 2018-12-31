@@ -29,6 +29,9 @@ Vagrant.configure("2") do |config|
         ]
       end
       nodeconfig.vm.provision :shell, :inline => "df -h"
+      # https://www.thegeekdiary.com/how-to-check-centos-version
+      nodeconfig.vm.provision :shell, :inline => "cat /etc/system-release"
+      nodeconfig.vm.provision :shell, :inline => "cat /etc/centos-release"
     end
   end
 
