@@ -1,7 +1,7 @@
 # packer-centos-vagrant
 Generate CentOS images with latest updates and tools (puppet, docker, ansible...) I am intersted in.
 
-Yes there are many fine pre configured boxes, but 
+Yes there are many fine pre configured boxes, but
 - I am curious
 - I dislike the repeated downloads of updates for each vm...
 
@@ -16,6 +16,34 @@ This is my version of a CentOS 7 box
     set PACKER_LOG=1
     set PACKER_LOG_PATH=packerlog.txt
     packer build CentOS7.json
+
+## Test built Packer Box
+
+### Run
+
+    pushd test
+    rmdir /s /q .vagrant
+    vagrant up
+
+### Halt and Destroy
+
+    vagrant destroy -f
+
+## Add Box to Local Vagrant Cache
+### Add
+
+    vagrant box add lastnitescurry/centos7 file://packer/builds/virtualbox-centos7.box
+
+### Remove Box from Local Vagrant Cache
+
+    vagrant box remove lastnitescurry/centos7
+
+
+## Clean
+
+    rmdir /s /q packser\packer_cache
+    rmdir /s /q packer\builds
+    rmdir /s /q test\.vagrant
 
 ## References
 ### Packer and Vagrant
@@ -41,3 +69,13 @@ This is my version of a CentOS 7 box
 
 ### Centos 7.1810 (7.6?) Release
 - https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7.1810
+
+### Odds and Sods
+
+- http://searchservervirtualization.techtarget.com/blog/The-Virtualization-Room/Using-VRDP-to-view-VirtualBox-virtual-machines-remotely
+- https://www.vagrantup.com/docs/cli/rdp.html
+- https://coderwall.com/p/m7gscq/rdp-server-on-vagrant-box
+
+### Virtual Box linked clones
+
+- https://www.vagrantup.com/docs/virtualbox/configuration.html
