@@ -16,6 +16,7 @@ This is my version of a CentOS 7 box
     set PACKER_LOG=1
     set PACKER_LOG_PATH=packerlog.txt
     packer build CentOS7.json
+    popd
 
 ## Test built Packer Box
 
@@ -24,6 +25,7 @@ This is my version of a CentOS 7 box
     pushd test
     rmdir /s /q .vagrant
     vagrant up
+    popd
 
 ### Halt and Destroy
 
